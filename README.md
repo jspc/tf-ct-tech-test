@@ -16,9 +16,10 @@ After this, other services can be deployed to the cluster
 
 This repo requires:
 
- * digitalocean terraform provider
- * runscope terraform provider
- * kubernetes terraform provider
+* provider.digitalocean: version = "~> 0.1"
+* provider.kubernetes: version = "~> 1.1"
+* provider.null: version = "~> 1.0"
+* provider.runscope: version = "~> 0.1"
 
 It can be bootstrapped via:
 
