@@ -34,3 +34,7 @@ It can be tested and run as per:
 $ terraform plan
 $ terraform apply
 ```
+
+## Monitoring
+
+This cluster runs github.com/jspc/dumbcheck as a very naive healthcheck, which is then hit by runscope to provide a really basic canary healthcheck.
