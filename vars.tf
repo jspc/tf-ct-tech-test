@@ -29,3 +29,7 @@ variable "k8s_version" {
 variable "cni_version" {
   default = "v0.6.0"
 }
+
+variable "healthcheck_port" {
+  default = 8080
+}
