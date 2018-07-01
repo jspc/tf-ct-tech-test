@@ -24,7 +24,12 @@ This repo requires:
 It can be bootstrapped via:
 
 ```bash
-$ export TF_VAR_do_token=<digitalocean token> TF_VAR_runscope_token=<runscope api token>
+$ export TF_VAR_do_token=<digital ocean API key>
+$ export TF_VAR_runscope_token=<runscope API key>
+$ export TF_VAR_runscope_team=<runscope Team UUID>
+$ export TF_VAR_ssh_private_key=<private key to connect to hosts via>
+$ export TF_VAR_ssh_public_key=<public key to put on instances>
+
 $ terraform init
 ```
 
@@ -34,6 +39,26 @@ It can be tested and run as per:
 $ terraform plan
 $ terraform apply
 ```
+
+### A note on TLS
+
+This config uses a self signed certificate. The variables:
+
+```hcl
+variable "tls_private_key" {
+  default = ".secrets/selfsigned/key.pem"
+}
+
+variable "tls_cert" {
+  default = ".secrets/selfsigned/certificate.pem"
+}
+
+variable "tls_chain" {
+  default = ".secrets/selfsigned/chain"
+}
+```
+
+Can all be overridden with real keys.
 
 ## Monitoring
 
