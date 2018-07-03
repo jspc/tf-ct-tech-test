@@ -1,7 +1,7 @@
 module "weather-frontend" {
   source           = "./frontend"
   loadbalancer_tag = "${digitalocean_tag.worker.name}"
-  app_port         = "${var.healthcheck_port}"
+  app_port         = "8000"
   subdomain        = "weather"
   domain           = "jspc.pw"
   tls_private_key  = "${var.weather_tls_private_key}"

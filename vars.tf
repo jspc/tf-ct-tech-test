@@ -53,13 +53,13 @@ variable "healthcheck_tls_chain" {
 }
 
 variable "weather_tls_private_key" {
-  default = ".secrets/selfsigned/key.pem"
+  default = ".secrets/selfsigned2/key.pem"
 }
 
 variable "weather_tls_cert" {
-  default = ".secrets/selfsigned/certificate.pem"
+  default = ".secrets/selfsigned2/certificate.pem"
 }
 
 variable "weather_tls_chain" {
-  default = ".secrets/selfsigned/chain"
+  default = ".secrets/selfsigned2/chain"
 }

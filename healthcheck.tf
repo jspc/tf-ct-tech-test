@@ -1,5 +1,4 @@
-module "frontend" {
-  name             = "healthcheck"
+module "healthcheck" {
   source           = "./frontend"
   loadbalancer_tag = "${digitalocean_tag.worker.name}"
   app_port         = "${var.healthcheck_port}"
@@ -53,7 +52,7 @@ resource "runscope_step" "healthcheck" {
   bucket_id = "${runscope_bucket.k8s.id}"
   test_id   = "${runscope_test.healthcheck.id}"
   step_type = "request"
-  url       = "https://${digitalocean_record.loadbalancer.fqdn}"
+  url       = "https://${module.healthcheck.fqdn}"
   method    = "GET"
 
   variables = [
