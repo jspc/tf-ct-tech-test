@@ -3,7 +3,7 @@ locals {
 }
 
 resource "digitalocean_certificate" "loadbalancer" {
-  name              = "${local.domain_name}"
+  name              = "tls-${local.domain_name}"
   private_key       = "${file(var.tls_private_key)}"
   leaf_certificate  = "${file(var.tls_cert)}"
   certificate_chain = "${file(var.tls_chain)}"
