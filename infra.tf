@@ -1,5 +1,5 @@
 resource "digitalocean_ssh_key" "core" {
-  name       = "Terraform Coreos"
+  name       = "CT Tech Test"
   public_key = "${file("${var.ssh_public_key}")}"
 }
 

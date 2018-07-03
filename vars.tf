@@ -40,14 +40,26 @@ variable "healthcheck_port" {
   default = 8080
 }
 
-variable "tls_private_key" {
+variable "healthcheck_tls_private_key" {
   default = ".secrets/selfsigned/key.pem"
 }
 
-variable "tls_cert" {
+variable "healthcheck_tls_cert" {
   default = ".secrets/selfsigned/certificate.pem"
 }
 
-variable "tls_chain" {
+variable "healthcheck_tls_chain" {
   default = ".secrets/selfsigned/chain"
+}
+
+variable "weather_tls_private_key" {
+  default = ".secrets/selfsigned2/key.pem"
+}
+
+variable "weather_tls_cert" {
+  default = ".secrets/selfsigned2/certificate.pem"
+}
+
+variable "weather_tls_chain" {
+  default = ".secrets/selfsigned2/chain"
 }

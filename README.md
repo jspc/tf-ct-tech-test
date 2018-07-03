@@ -12,6 +12,16 @@ Deploy k8s into Digital Ocean (the hard way). This project will:
 
 After this, other services can be deployed to the cluster
 
+## Pre-requisites
+
+You will need:
+
+ 1. A digital ocean account and API key - https://www.digitalocean.com/docs/api/
+ 1. A runscope account and API key - https://www.runscope.com/docs/api
+ 1. A spanking new SSH Key
+
+This project will create some self signed certs. You can override the `TF_VAR_` environment variables to point to a preferred one. See below for more details.
+
 ## Usage
 
 This repo requires:
@@ -45,15 +55,15 @@ $ terraform apply
 This config uses a self signed certificate. The variables:
 
 ```hcl
-variable "tls_private_key" {
+variable "healthcheck_tls_private_key" {
   default = ".secrets/selfsigned/key.pem"
 }
 
-variable "tls_cert" {
+variable "healthcheck_tls_cert" {
   default = ".secrets/selfsigned/certificate.pem"
 }
 
-variable "tls_chain" {
+variable "healthcheck_tls_chain" {
   default = ".secrets/selfsigned/chain"
 }
 ```
